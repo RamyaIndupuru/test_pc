@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src ="server.js"></script>
+	<title>THE GLCM CALCULATOR</title>
+	<style>
+		body{
+			background-color: #B1624EFF;
+			margin: 100px;
+			height:  200px;
+
+		}
+		button{
+			border: none;
+			background-color: #4CAF50 ;
+			padding:  15px 32px;
+			text-align: center;
+			font-size: 12px;
+		}
+		#image {
+			display:  none;
+		}
+	</style>
+</head>
+<body>
+	<h1> The GLCM CALCULATOR !! </h1>
+    <h3>Select a random array to generate desired grey level co-occurence matrix</h3>
+<p>Random matrix generated in defined range.</p>
+<button onclick="document.getElementById('demo').innerHTML = getRndInteger(1,9)">Matrix GL</button>
+<p id="demo"></p>
+<script>
+  function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+</script>
+<form id='form' method = 'post'>
+	<p> Row: <input type='number' id = "dist_"/></p>
+	<p> Column: <input type='number' id = "angle_"/></p>
+	<p><input id="clickresult" type="button" onclick="display()" value="generate"/></p>
+</form>
+<script type="text/javascript">
+	var row;
+	var column;
+
+	function getDistance(){
+		return document.getElementById("dist_").value;
+	}
+	function getAngle(){
+		return document.getElementById("angle_").value;
+	}
+	function display(){
+		row = getDistance();
+		column = getAngle();
+		window.alert("matrix generated for glcm of"+" row = " + row + " and column = "+ column);
+		document.getElementsById("form").clickresult();
+	}
+</script>
+<div>
+	<h4>Click button to generate greyscale image of random matrix</h4>
+</div>
+<button type="button" onclick="show()" id="btnId">d=0 theta=0
+	</button>
+	<input id="toggleVisibilityButton" type="button" value="GLCM0"/>
+<table  id="displaytable" style="display:none" width="100%" cellpadding="1" cellspacing="0" border="3">
+    <tr align="center">
+                  <td class="lbl">col</td>
+            <td class="lbl">col</td>
+            <td class="lbl">col</td>
+            <td class="lbl">col</td>
+            </tr>
+            <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+             <td align="center">0</td>
+             <td align="center">0</td>
+            </tr>
+            <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">1</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">1</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">1</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+</table> 
+<script>
+document.getElementById("toggleVisibilityButton").addEventListener("click", function(button) {    
+   if (document.getElementById("displaytable").style.display === "none") 
+   	document.getElementById("displaytable").style.display = "block";
+   else document.getElementById("displaytable").style.display = "none";
+});
+</script>
+<button type="button" onclick="show()" id="btnId">d=0 theta=45
+	</button>
+	<input id="VisibilityButton" type="button" value="GLCM45"/>
+<table  id="displaytable2" style="display:none" width="100%" cellpadding="1" cellspacing="0" border="3">
+    <tr align="center">
+     <td class="lbl">col</td>
+            <td class="lbl">col</td>
+            <td class="lbl">col</td>
+            <td class="lbl">col</td>
+            </tr>
+            <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+             <td align="center">0</td>
+             <td align="center">0</td>
+            </tr>
+            <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">1</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+            <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+            <tr>
+            <td align="center">0</td>
+            <td align="center">1</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+</table>
+<script>
+document.getElementById("VisibilityButton").addEventListener("click", function(button) {    
+   if (document.getElementById("displaytable2").style.display === "none") 
+   	document.getElementById("displaytable2").style.display = "block";
+   else document.getElementById("displaytable2").style.display = "none";
+});
+</script>
+     
+		<button type="button" onclick="show()" id="btnId">d=0 theta=90
+	</button>
+	<input id="VisibilityButton3" type="button" value="GLCM90"/>
+<table  id="rmstj" style="display:none" width="100%" cellpadding="1" cellspacing="0" border="3">
+    <tr align="center">
+     <td class="lbl">col</td>
+            <td class="lbl">col</td>
+            <td class="lbl">col</td>
+            <td class="lbl">col</td>
+            <td class="lbl">col</td>
+            <td class="lbl">col</td>
+            <td class="lbl">col</td>
+            </tr>
+            <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+             <td align="center">0</td>
+             <td align="center">0</td>
+             <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+            <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">1</td>
+           <td align="center">0</td>
+           <td align="center">1</td>
+           <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">1</td>
+            <td align="center">1</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+            <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+            <td align="center">1</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+            <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">1</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+</table>
+<script>
+document.getElementById("VisibilityButton3").addEventListener("click", function(button) {    
+   if (document.getElementById("rmstj").style.display === "none") 
+   	document.getElementById("rmstj").style.display = "block";
+   else document.getElementById("rmstj").style.display = "none";
+});
+</script>
+		<button type="button" onclick="show()" id="btnId">d=0 theta=135
+	</button>
+<input id="VisibilityButton4" type="button" value="GLCM135"/>
+<table  id="rmstjs" style="display:none" width="100%" cellpadding="1" cellspacing="0" border="3">
+    <tr align="center">
+     <td class="lbl">col</td>
+            <td class="lbl">col</td>
+            <td class="lbl">col</td>
+            <td class="lbl">col</td>
+            <td class="lbl">col</td>
+            <td class="lbl">col</td>
+            <td class="lbl">col</td>
+            </tr>
+            <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+             <td align="center">0</td>
+             <td align="center">0</td>
+             <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+            <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">1</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+            <td align="center">1</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">1</td>
+           <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">1</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+             <tr>
+            <td align="center">0</td>
+            <td align="center">1</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+            <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+            <td align="center">1</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+            <tr>
+            <td align="center">0</td>
+            <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+           <td align="center">0</td>
+            <td align="center">0</td>
+           <td align="center">0</td>
+            </tr>
+</table>
+<script>
+document.getElementById("VisibilityButton4").addEventListener("click", function(button) {    
+   if (document.getElementById("rmstjs").style.display === "none") 
+   	document.getElementById("rmstjs").style.display = "block";
+   else document.getElementById("rmstjs").style.display = "none";
+});
+</script>
+</body>
+</html>
